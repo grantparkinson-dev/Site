@@ -1,5 +1,13 @@
 body {
     font-family: 'Arial', sans-serif;
+    padding-top: 60px; /* Add padding to account for fixed navbar */
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
 }
 
 .navbar-brand {
@@ -24,18 +32,25 @@ body {
     padding: 20px 0;
     text-align: center;
     margin-top: 40px;
-  }
-  
-  .site-footer p {
+}
+
+.site-footer p {
     margin-bottom: 10px;
-  }
-  
-  .footer-nav a {
+}
+
+.footer-nav a {
     color: #007bff;
     text-decoration: none;
     margin: 0 5px;
-  }
-  
-  .footer-nav a:hover {
+}
+
+.footer-nav a:hover {
     text-decoration: underline;
-  }
+}
+
+/* Add responsive styles */
+@media (max-width: 768px) {
+    body {
+        padding-top: 56px; /* Adjust for smaller navbar on mobile */
+    }
+}

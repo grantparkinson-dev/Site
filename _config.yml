@@ -17,6 +17,9 @@ exclude:
   - Gemfile
   - Gemfile.lock
 
+include:
+  - projects
+
 collections:
   posts:
     output: true

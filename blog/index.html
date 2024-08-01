@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Blog - Your Site Title</title>
+    <link rel="stylesheet" href="/Site/assets/css/style.css">
+    <link rel="stylesheet" href="/Site/assets/css/dark-mode.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="/">Grant Parkinson</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Site/about.md">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Site/projects.md">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Site/blog.md">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Site/contact.md">Contact</a>
+                </li>
+            </ul>
+            <button id="darkModeToggle" class="btn btn-outline-light ms-3">
+                <i class="bi bi-moon"></i>
+            </button>
+        </div>
+    </div>
+</nav>
+
+    <div class="container mt-5" role="main">
+        <h1 id="welcome-to-my-blog">Welcome to My Blog</h1>
+
+<p>Here you’ll find my thoughts, experiences, and insights on various topics related to [your main blog topics, e.g., web development, data visualization, etc.].</p>
+
+<div id="blogPosts">
+  <!-- Blog posts will be dynamically inserted here by JavaScript -->
+  <p>Loading blog posts...</p>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const blogPostsContainer = document.getElementById('blogPosts');
+  
+  fetch('/Site/blog/posts.json')
+    .then(response => response.json())
+    .then(posts => {
+      blogPostsContainer.innerHTML = ''; // Clear loading message
+      posts.forEach(post => {
+        const article = document.createElement('article');
+        article.className = 'blog-post mb-5';
+        article.innerHTML = `
+          <h2><a href="${post.url}">${post.title}</a></h2>
+          <p class="text-muted">${post.date}</p>
+          <p>${post.excerpt}</p>
+          <a href="${post.url}" class="btn btn-outline-primary">Read More</a>
+        `;
+        blogPostsContainer.appendChild(article);
+      });
+    })
+    .catch(error => {
+      console.error('Error fetching blog posts:', error);
+      blogPostsContainer.innerHTML = '<p>Error loading blog posts. Please try again later.</p>';
+    });
+});
+</script>
+
+
+    </div>
+
+    
+
+    <script src="/Site/assets/js/main.js"></script>
+    <script src="/Site/assets/js/dark-mode.js"></script>
+</body>
+</html>

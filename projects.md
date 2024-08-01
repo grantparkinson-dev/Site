@@ -12,5 +12,5 @@ HTML/CSS/JavaScript
 Plotly.js for data visualization
 Spotify API for data retrieval
 
-[View Spotify Visualizations]({{ site.baseurl }}/projects/spotify-visualizations/){: .btn .btn-primary}
+[View Spotify Visualizations]({{ site.baseurl }}/projects/spotify-visualizations/index.html){: .btn .btn-primary}
 <!-- Add more projects here as needed -->

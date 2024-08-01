@@ -9,7 +9,7 @@ Hi, I'm [Your Name]. I'm a [Your Profession/Title] passionate about [Your Intere
 
 ## Featured Projects
 
-- [Spotify Visualizations]({{ site.baseurl }}/projects/spotify-visualizations/)
+- [Spotify Visualizations]({{ site.baseurl }}/projects/spotify-visualizations/index.html)
 <!-- Add more featured projects -->
 
 ## Recent Blog Posts

@@ -19,6 +19,23 @@ body {
     transition: box-shadow 0.3s ease-in-out;
 }
 
-footer {
-    margin-top: auto;
-}
+.site-footer {
+    background-color: #f8f9fa;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 40px;
+  }
+  
+  .site-footer p {
+    margin-bottom: 10px;
+  }
+  
+  .footer-nav a {
+    color: #007bff;
+    text-decoration: none;
+    margin: 0 5px;
+  }
+  
+  .footer-nav a:hover {
+    text-decoration: underline;
+  }

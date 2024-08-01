@@ -9,7 +9,7 @@ Here are some of the projects I've worked on:
 
 ## Spotify Visualizations
 
-[View Spotify Visualizations]({{ site.baseurl }}/projects/spotify-visualizations/)
+[View Spotify Visualizations]({{ site.baseurl }}/_projects/spotify-visualizations/)
 
 Description of your Spotify Visualizations project goes here.
 

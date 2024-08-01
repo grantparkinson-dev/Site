@@ -1,6 +1,6 @@
 Promise.all([
-  fetch('{{ site.baseurl }}/projects/spotify-visualizations/data/top_artists_data.json').then(response => response.json()),
-  fetch('{{ site.baseurl }}/projects/spotify-visualizations/data/top_tracks_data.json').then(response => response.json())
+  fetch('https://grantparkinson-dev.github.io/Site/projects/spotify-visualizations/data/top_artists_data.json').then(response => response.json()),
+  fetch('https://grantparkinson-dev.github.io/Site/projects/spotify-visualizations/data/top_tracks_data.json').then(response => response.json())
 ]).then(([artistsData, tracksData]) => {
   createTopArtistsChart(artistsData);
   createTopTracksChart(tracksData);

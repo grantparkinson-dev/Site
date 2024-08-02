@@ -1,61 +1,114 @@
-body {
-    font-family: 'Arial', sans-serif;
-    padding-top: 60px; /* Add padding to account for fixed navbar */
-    background-color: #FDF7E4; /* Softer white background */
-}
-
-.navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    background-color: #FAEED1; /* Softer white for navbar */
-}
-
-.navbar-brand {
-    font-weight: bold;
-    color: #DED0B6; /* Softer white for brand text */
-}
-
-.nav-link.active {
-    font-weight: bold;
-    color: #DED0B6; /* Softer white for active link */
-}
-
-#darkModeToggle {
-    cursor: pointer;
-}
-
-.card:hover {
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    transition: box-shadow 0.3s ease-in-out;
-}
-
-.site-footer {
-    background-color: #FAEED1; /* Softer white for footer */
-    padding: 20px 0;
-    text-align: center;
-    margin-top: 40px;
-}
-
-.site-footer p {
-    margin-bottom: 10px;
-    color: #DED0B6; /* Softer white for footer text */
-}
-
-.footer-nav a {
-    color: #007bff;
-    text-decoration: none;
-    margin: 0 5px;
-}
-
-.footer-nav a:hover {
-    text-decoration: underline;
-}
-
-/* Add responsive styles */
-@media (max-width: 768px) {
-    body {
-        padding-top: 56px; /* Adjust for smaller navbar on mobile */
-    }
-}
+:root {
+    --light-body: #e1bb80;
+    --light-nav: #7b6b43;
+    --light-footer: #685634;
+    --light-button: #918450;
+    --light-text: #333333;
+    
+    --dark-body: #30321c;
+    --dark-nav: #12100e;
+    --dark-footer: #12100e;
+    --dark-button: #6b654b;
+    --dark-text: #e0e0e0;
+  }
+  
+  body {
+      font-family: 'Arial', sans-serif;
+      padding-top: 60px;
+      background-color: var(--light-body);
+      color: var(--light-text);
+      transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      background-color: var(--light-nav);
+  }
+  
+  .navbar-brand {
+      font-weight: bold;
+      color: var(--light-text);
+  }
+  
+  .nav-link.active {
+      font-weight: bold;
+      color: var(--light-text);
+  }
+  
+  #darkModeToggle {
+      cursor: pointer;
+  }
+  
+  .card {
+      background-color: var(--light-body);
+      transition: box-shadow 0.3s ease-in-out;
+  }
+  
+  .card:hover {
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  
+  .site-footer {
+      background-color: var(--light-footer);
+      padding: 20px 0;
+      text-align: center;
+      margin-top: 40px;
+  }
+  
+  .site-footer p {
+      margin-bottom: 10px;
+      color: var(--light-text);
+  }
+  
+  .footer-nav a {
+      color: var(--light-button);
+      text-decoration: none;
+      margin: 0 5px;
+  }
+  
+  .footer-nav a:hover {
+      text-decoration: underline;
+  }
+  
+  /* Dark Mode Styles */
+  body.dark-mode {
+      background-color: var(--dark-body);
+      color: var(--dark-text);
+  }
+  
+  .dark-mode .navbar {
+      background-color: var(--dark-nav);
+  }
+  
+  .dark-mode .card {
+      background-color: var(--dark-nav);
+      border-color: var(--dark-button);
+  }
+  
+  .dark-mode .navbar-brand,
+  .dark-mode .nav-link.active {
+      color: var(--dark-text);
+  }
+  
+  .dark-mode .site-footer {
+      background-color: var(--dark-footer);
+      color: var(--dark-text);
+  }
+  
+  .dark-mode .footer-nav a {
+      color: var(--dark-button);
+  }
+  
+  .dark-mode .footer-nav a:hover {
+      color: var(--dark-text);
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+      body {
+          padding-top: 56px;
+      }
+  }

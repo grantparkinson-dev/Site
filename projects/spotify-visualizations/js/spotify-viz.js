@@ -7,9 +7,16 @@ Promise.all([
   createListeningTrendsChart(artistsData, tracksData);
 });
 
+function filterDataByTime(data, startTime, endTime) {
+  return data.filter(item => {
+    const timestamp = new Date(item.ts);
+    return timestamp >= startTime && timestamp <= endTime;
+  });
+}
+
 function createTopArtistsChart(data) {
   const artistNames = data.map(item => item.master_metadata_album_artist_name);
-  const playTime = data.map(item => item.ms_played / 60000); // Convert ms to minutes
+  const playTime = data.map(item => item.ms_played); // Already in minutes
 
   const trace = {
       x: artistNames,
@@ -47,7 +54,7 @@ function createTopArtistsChart(data) {
 
 function createTopTracksChart(data) {
   const trackNames = data.map(item => `${item.master_metadata_track_name} - ${item.master_metadata_album_artist_name}`);
-  const playTime = data.map(item => item.ms_played / 60000); // Convert ms to minutes
+  const playTime = data.map(item => item.ms_played); // Already in minutes
 
   const trace = {
       x: trackNames,
@@ -85,8 +92,8 @@ function createTopTracksChart(data) {
 }
 
 function createListeningTrendsChart(artistsData, tracksData) {
-  const dates = artistsData.map(item => new Date(item.timestamp));
-  const playTime = artistsData.map(item => item.ms_played / 60000); // Convert ms to minutes
+  const dates = artistsData.map(item => new Date(item.ts));
+  const playTime = artistsData.map(item => item.ms_played); // Already in minutes
 
   const trace = {
       x: dates,
@@ -111,8 +118,23 @@ function createListeningTrendsChart(artistsData, tracksData) {
               },
               {
                   method: 'restyle',
-                  args: ['x', [dates.slice(0, 30)]],
-                  label: 'Last 30 Days'
+                  args: ['x', [dates.slice(-14)]], // Last 2 weeks
+                  label: 'Last 2 Weeks'
+              },
+              {
+                  method: 'restyle',
+                  args: ['x', [dates.slice(-30)]], // Last month
+                  label: 'Last Month'
+              },
+              {
+                  method: 'restyle',
+                  args: ['x', [dates.slice(-182)]], // Last 6 months
+                  label: 'Last 6 Months'
+              },
+              {
+                  method: 'restyle',
+                  args: ['x', [dates.slice(-365)]], // Last year
+                  label: 'Last Year'
               }
           ],
           direction: 'down',

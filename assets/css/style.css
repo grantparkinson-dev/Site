@@ -32,7 +32,7 @@
   
   .navbar-brand {
       font-weight: bold;
-      color: var(--light-text);
+      color: var(--dark-text);
   }
   
   .nav-link.active {

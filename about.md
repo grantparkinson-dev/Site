@@ -3,8 +3,8 @@ layout: default
 title: Page Title
 ---
 
-    <main class="container mt-5">
-        <h1 class="display-4">About Me</h1>
+<main class="container mt-5">
+    <h1 class="display-4">About Me</h1>
         <div class="row">
             <div class="col-md-4">
                 <img src="/img/profile-picture.jpg" alt="Your Name" class="img-fluid rounded-circle mb-3">
@@ -21,6 +21,6 @@ title: Page Title
                 <a href="/assets/resume.pdf" class="btn btn-primary" target="_blank">Download Resume</a>
             </div>
         </div>
-    </main>
+</main>
 
     <!-- Footer and scripts from template.html -->

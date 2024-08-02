@@ -86,4 +86,27 @@ document.addEventListener('DOMContentLoaded', function() {
             contactForm.reset();
         });
     }
+    if (currentPage === '/' || currentPage === '/index.md') {
+        const featuredProjects = [
+            { title: 'Spotify Visualizations', description: 'Interactive data visualizations of Spotify listening history.', image: '/img/project-thumbnails/spotify-viz.jpg', url: '/projects/spotify-visualizations/' },
+            // Add more projects here
+        ];
+
+        const projectsContainer = document.getElementById('featuredProjects');
+        featuredProjects.forEach(project => {
+            const col = document.createElement('div');
+            col.className = 'col-md-4 mb-4';
+            col.innerHTML = `
+                <div class="card h-100">
+                    <img src="${project.image}" class="card-img-top" alt="${project.title}">
+                    <div class="card-body">
+                        <h5 class="card-title">${project.title}</h5>
+                        <p class="card-text">${project.description}</p>
+                        <a href="${project.url}" class="btn btn-primary">View Project</a>
+                    </div>
+                </div>
+            `;
+            projectsContainer.appendChild(col);
+        });
+    }
 });

@@ -9,8 +9,9 @@ Hi, I'm [Your Name]. I'm a [Your Profession/Title] passionate about [Your Intere
 
 ## Featured Projects
 
-- [Spotify Visualizations]({{ site.baseurl }}/projects/spotify-visualizations/index.html)
-<!-- Add more featured projects -->
+<div class="row" id="featuredProjects">
+  <!-- This will be populated by JavaScript -->
+</div>
 
 ## Recent Blog Posts
 

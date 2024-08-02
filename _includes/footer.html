@@ -1,10 +1,30 @@
-<footer class="site-footer">
-    <div class="container">
-      <p>&copy; {{ site.time | date: '%Y' }} {{ site.title | default: "Your Site" }}. All rights reserved.</p>
-      <nav class="footer-nav">
-        <a href="{{ '/' | relative_url }}">Home</a> |
-        <a href="{{ '/about/' | relative_url }}">About</a> |
-        <a href="{{ '/contact/' | relative_url }}">Contact</a>
-      </nav>
+<footer class="site-footer mt-auto py-3">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <h5>About</h5>
+        <p>Brief description about yourself or your site.</p>
+      </div>
+      <div class="col-md-4">
+        <h5>Contact</h5>
+        <ul class="list-unstyled">
+          <li><a href="mailto:grant.c.parkinson@gmail.com">Email</a></li>
+          <li><a href="https://github.com/grantparkinson-dev">GitHub</a></li>
+          <li><a href="https://linkedin.com/in/yourusername">LinkedIn</a></li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <h5>Navigation</h5>
+        <ul class="list-unstyled">
+          <li><a href="{{ '/' | relative_url }}">Home</a></li>
+          <li><a href="{{ '/about/' | relative_url }}">About</a></li>
+          <li><a href="{{ '/projects/' | relative_url }}">Projects</a></li>
+          <li><a href="{{ '/blog/' | relative_url }}">Blog</a></li>
+          <li><a href="{{ '/contact/' | relative_url }}">Contact</a></li>
+        </ul>
+      </div>
     </div>
-  </footer>
+    <hr>
+    <p class="text-center">© {{ site.time | date: '%Y' }} {{ site.title | default: "Your Site" }}. All rights reserved.</p>
+  </div>
+</footer>

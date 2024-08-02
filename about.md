@@ -7,7 +7,7 @@ title: Page Title
     <h1 class="display-4">About Me</h1>
         <div class="row">
             <div class="col-md-4">
-                <img src="{{ site.baseurl }}/img/profile-picture.jpg" alt="Your Name" class="img-fluid rounded-circle mb-3">
+                <img src="{{ site.baseurl }}/img/profile-pic.jpg" alt="Your Name" class="img-fluid rounded-circle mb-3">
             </div>
             <div class="col-md-8">
                 <p>Write a detailed description about yourself, your background, skills, and interests.</p>

@@ -1,7 +1,7 @@
 // spotify-viz.js
 Promise.all([
-    fetch('{{ site.baseurl }}/projects/spotify-visualizations/data/artist_summary.json').then(response => response.json()),
-    fetch('{{ site.baseurl }}/projects/spotify-visualizations/data/song_summary.json').then(response => response.json())
+    fetch('https://grantparkinson-dev.github.io/Site/projects/spotify-visualizations/data/artist_summary.json').then(response => response.json()),
+    fetch('https://grantparkinson-dev.github.io/Site/projects/spotify-visualizations/data/song_summary.json').then(response => response.json())
   ]).then(([artistSummary, songSummary]) => {
     createTopArtistsChart(artistSummary);
     createTopTracksChart(songSummary);

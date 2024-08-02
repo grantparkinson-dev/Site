@@ -8,21 +8,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    document.getElementById('darkModeToggle').addEventListener('click', function() {
-        const body = document.body;
-        const moonIcon = document.getElementById('moonIcon');
-        const sunIcon = document.getElementById('sunIcon');
-        
-        body.classList.toggle('dark-mode');
-        
-        if (body.classList.contains('dark-mode')) {
-            moonIcon.style.display = 'none';
-            sunIcon.style.display = 'block';
-        } else {
-            moonIcon.style.display = 'block';
-            sunIcon.style.display = 'none';
-        }
-    });
 
 
     // Populate recent blog posts on home page

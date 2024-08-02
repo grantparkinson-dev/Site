@@ -1,15 +1,25 @@
 :root {
     --light-body: #e1bb80;
-    --light-nav: #7b6b43;
-    --light-footer: #685634;
-    --light-button: #918450;
-    --light-text: #333333;
-    
-    --dark-body: #30321c;
-    --dark-nav: #12100e;
-    --dark-footer: #12100e;
-    --dark-button: #6b654b;
-    --dark-text: #e0e0e0;
+  --light-nav: #7b6b43;
+  --light-footer: #685634;
+  --light-button: #918450;
+  --light-text: #333333;
+  
+  --dark-body: #30321c;
+  --dark-nav: #12100e;
+  --dark-footer: #12100e;
+  --dark-button: #6b654b;
+  --dark-text: #e0e0e0;
+
+  /* New toggle variables */
+  --toggleHeight: 2em;
+  --toggleWidth: 3.75em;
+  --toggleBtnRadius: 1.25em;
+  --bgColor--night: #423966;
+  --toggleBtn-bgColor--night: var(--bgColor--night);
+  --mooncolor: #D9FBFF;
+  --bgColor--day: #9ee3fb;
+  --toggleBtn-bgColor--day: var(--bgColor--day);
   }
   
   body {
@@ -113,4 +123,66 @@
       body {
           padding-top: 56px;
       }
+  }
+
+  #darkModeToggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+  }
+  
+  .tdnn {
+    position: relative;
+    height: var(--toggleHeight);
+    width: var(--toggleWidth);
+    border-radius: var(--toggleHeight);
+    transition: all 500ms ease-in-out;
+    background: var(--bgColor--night);
+  }
+  
+  body:not(.dark-mode) .tdnn {
+    background: #FFBF71;
+  }
+  
+  .moon {
+    position: absolute;
+    display: block;
+    border-radius: 50%;
+    transition: all 400ms ease-in-out;
+    
+    top: 0.375em;
+    left: 0.375em;
+    transform: rotate(-75deg);
+    width: var(--toggleBtnRadius);
+    height: var(--toggleBtnRadius);
+    background: var(--bgColor--night);
+    box-shadow: 
+      0.375em 0.3125em 0 0em var(--mooncolor) inset,
+      rgba(255, 255, 255, 0.1) 0em -0.875em 0 -0.5625em,
+      rgba(255, 255, 255, 0.1) 0.375em 0.875em 0 -0.5625em,
+      rgba(255, 255, 255, 0.1) 0.25em 1.625em 0 -0.5em,
+      rgba(255, 255, 255, 0.1) 0.75em 0.25em 0 -0.5125em,
+      rgba(255, 255, 255, 0.1) 1em 1em 0 -0.5625em,
+      rgba(255, 255, 255, 0.1) 0.75em 1.625em 0 -0.5625em,
+      rgba(255, 255, 255, 0.1) -0.5em 0.875em 0 -0.5625em,
+      rgba(255, 255, 255, 0.1) -0.125em 1.25em 0 -0.5625em;
+  }
+  
+  body:not(.dark-mode) .moon {
+    top: 0.5625em;
+    left: 2.25em;
+    transform: rotate(0deg);
+    width: 0.875em;
+    height: 0.875em;
+    background: #fff;
+    box-shadow: 0.375em 0.375em 0 0.625em #fff inset,
+      0 -0.625em 0 -0.3375em #fff,
+      0.4375em -0.4375em 0 -0.375em #fff,
+      0.625em 0 0 -0.3375em #fff,
+      0.4375em 0.4375em 0 -0.375em #fff,
+      0 0.625em 0 -0.3375em #fff,
+      -0.4375em 0.4375em 0 -0.375em #fff,
+      -0.625em 0 0 -0.3375em #fff,
+      -0.4375em -0.4375em 0 -0.375em #fff;
   }

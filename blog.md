@@ -10,5 +10,5 @@ title: Page Title
     </div>
 </main>
 
-    <!-- Footer and scripts from template.html -->
+  
 

@@ -13,4 +13,3 @@ Here are some of the projects I've worked on:
 
 Description of your Spotify Visualizations project goes here.
 
-<!-- Add more projects here -->

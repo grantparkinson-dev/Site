@@ -22,5 +22,5 @@ title: Page Title
     </form>
 </main>
 
-    <!-- Footer and scripts from template.html -->
+
 

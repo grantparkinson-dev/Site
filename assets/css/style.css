@@ -1,6 +1,7 @@
 body {
     font-family: 'Arial', sans-serif;
     padding-top: 60px; /* Add padding to account for fixed navbar */
+    background-color: #FDF7E4; /* Softer white background */
 }
 
 .navbar {
@@ -8,14 +9,17 @@ body {
     top: 0;
     width: 100%;
     z-index: 1000;
+    background-color: #FAEED1; /* Softer white for navbar */
 }
 
 .navbar-brand {
     font-weight: bold;
+    color: #DED0B6; /* Softer white for brand text */
 }
 
 .nav-link.active {
     font-weight: bold;
+    color: #DED0B6; /* Softer white for active link */
 }
 
 #darkModeToggle {
@@ -28,7 +32,7 @@ body {
 }
 
 .site-footer {
-    background-color: #f8f9fa;
+    background-color: #FAEED1; /* Softer white for footer */
     padding: 20px 0;
     text-align: center;
     margin-top: 40px;
@@ -36,6 +40,7 @@ body {
 
 .site-footer p {
     margin-bottom: 10px;
+    color: #DED0B6; /* Softer white for footer text */
 }
 
 .footer-nav a {

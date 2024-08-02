@@ -90,36 +90,36 @@ function createTopTracksChart(data, timeRange) {
 }
 
 function createTopResultsTable(data) {
-  const trackNames = data.map(item => item.master_metadata_track_name);
-  const artistNames = data.map(item => item.master_metadata_album_artist_name);
-  const playTime = data.map(item => item.total_ms_played / 60000); // Convert to minutes
-  const totalPlays = data.map(item => item.total_plays);
-
-  const trace = {
-    type: 'table',
-    header: {
-      values: [["<b>Track Name</b>"], ["<b>Artist Name</b>"], ["<b>Listening Time (minutes)</b>"], ["<b>Total Plays</b>"]],
-      align: "center",
-      line: { width: 1, color: 'black' },
-      fill: { color: "grey" },
-      font: { family: "Arial", size: 12, color: "white" }
-    },
-    cells: {
-      values: [trackNames, artistNames, playTime, totalPlays],
-      align: "center",
-      line: { color: "black", width: 1 },
-      fill: { color: ['rgba(228, 222, 249, 0.65)', 'rgba(222, 235, 247, 0.65)'] },
-      font: { family: "Arial", size: 11, color: ["black"] }
-    }
-  };
-
-  const layout = {
-    title: 'Top 150 Tracks',
-    responsive: true  // Ensure the table is responsive
-  };
-
-  Plotly.newPlot('topResultsTable', [trace], layout);
-}
+    const trackNames = data.map(item => item.master_metadata_track_name);
+    const artistNames = data.map(item => item.master_metadata_album_artist_name);
+    const playTime = data.map(item => Math.round(item.total_ms_played / 60000)); // Convert to minutes and round to nearest integer
+    const totalPlays = data.map(item => item.total_plays);
+  
+    const trace = {
+      type: 'table',
+      header: {
+        values: [["<b>Track Name</b>"], ["<b>Artist Name</b>"], ["<b>Listening Time (minutes)</b>"], ["<b>Total Plays</b>"]],
+        align: "center",
+        line: { width: 1, color: 'black' },
+        fill: { color: "grey" },
+        font: { family: "Arial", size: 12, color: "white" }
+      },
+      cells: {
+        values: [trackNames, artistNames, playTime, totalPlays],
+        align: "center",
+        line: { color: "black", width: 1 },
+        fill: { color: ['rgba(228, 222, 249, 0.65)', 'rgba(222, 235, 247, 0.65)'] },
+        font: { family: "Arial", size: 11, color: ["black"] }
+      }
+    };
+  
+    const layout = {
+      title: 'Top 150 Tracks',
+      responsive: true  // Ensure the table is responsive
+    };
+  
+    Plotly.newPlot('topResultsTable', [trace], layout);
+  }
 
 // Initial load with default time range
 loadAndCreateCharts('all_time');

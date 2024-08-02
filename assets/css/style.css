@@ -19,6 +19,8 @@
       color: var(--light-text);
       transition: background-color 0.3s, color 0.3s;
   }
+ 
+/* You can remove the light-mode class styles if you're using it as the default */
   
   .navbar {
       position: fixed;

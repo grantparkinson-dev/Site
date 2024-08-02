@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     if (currentPage === '/' || currentPage === '/index.md') {
         const featuredProjects = [
-            { title: 'Spotify Visualizations', description: 'Interactive data visualizations of Spotify listening history.', image: '/img/project-thumbnails/spotify-viz.jpg', url: '/projects/spotify-visualizations/' },
+            { title: 'Spotify Visualizations', description: 'Interactive data visualizations of Spotify listening history.', image: '/img/project-thumbnails/spotify-viz.jpg', url: 'site/projects/spotify-visualizations/index.html' },
             // Add more projects here
         ];
 

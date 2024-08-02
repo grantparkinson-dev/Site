@@ -29,6 +29,12 @@ Promise.all([
       title: 'Top Artists by Listening Time',
       xaxis: { title: 'Artist' },
       yaxis: { title: 'Listening Time (minutes)' },
+      margin: {
+        l: 150,  // Adjust the left margin to accommodate long names
+        r: 30,
+        b: 50,
+        t: 50
+      }
     };
   
     Plotly.newPlot('topArtistsChart', [trace], layout);
@@ -52,6 +58,12 @@ Promise.all([
       title: 'Top Tracks by Listening Time',
       xaxis: { title: 'Listening Time (minutes)' },
       yaxis: { title: 'Track' },
+      margin: {
+        l: 250,  // Adjust the left margin to accommodate long names
+        r: 30,
+        b: 50,
+        t: 50
+      }
     };
   
     Plotly.newPlot('topTracksChart', [trace], layout);

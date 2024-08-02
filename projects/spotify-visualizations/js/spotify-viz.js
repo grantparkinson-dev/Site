@@ -49,26 +49,25 @@ Promise.all([
     const playTime = data.map(item => item.total_ms_played / 60000); // Convert to minutes
   
     const trace = {
-      x: playTime,
-      y: trackNames,
+      x: trackNames,
+      y: playTime,
       type: 'bar',
       marker: {
         color: 'rgba(255, 153, 51, 0.7)'
-      },
-      orientation: 'h'
+      }
     };
   
     const layout = {
       title: 'Top Tracks by Listening Time',
-      xaxis: { title: 'Listening Time (minutes)' },
-      yaxis: {
+      xaxis: {
         title: 'Track',
-        tickangle: window.innerWidth < 768 ? -45 : 0  // Rotate the y-axis labels based on screen size
+        tickangle: window.innerWidth < 768 ? -90 : -45  // Rotate the x-axis labels based on screen size
       },
+      yaxis: { title: 'Listening Time (minutes)' },
       margin: {
-        l: window.innerWidth < 768 ? 200 : 150,  // Adjust the left margin based on screen size
+        l: 50,
         r: 30,
-        b: 50,
+        b: window.innerWidth < 768 ? 200 : 150,  // Adjust the bottom margin based on screen size
         t: 50
       },
       responsive: true  // Ensure the chart is responsive

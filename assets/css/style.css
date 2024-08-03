@@ -1,175 +1,190 @@
 :root {
     --light-body: #e1bb80;
-  --light-nav: #7b6b43;
-  --light-footer: #685634;
-  --light-button: #918450;
-  --light-text: #333333;
-  
-  --dark-body: #30321c;
-  --dark-nav: #12100e;
-  --dark-footer: #12100e;
-  --dark-button: #6b654b;
-  --dark-text: #e0e0e0;
+    --light-nav: #7b6b43;
+    --light-footer: #685634;
+    --light-button: #918450;
+    --light-text: #333333;
 
-  /* New toggle variables */
-  --toggleHeight: 2em;
-  --toggleWidth: 3.75em;
-  --toggleBtnRadius: 1.25em;
-  --bgColor--night: #423966;
-  --toggleBtn-bgColor--night: var(--bgColor--night);
-  --mooncolor: #D9FBFF;
-  --bgColor--day: #9ee3fb;
-  --toggleBtn-bgColor--day: var(--bgColor--day);
-  }
-  
-  body {
-      font-family: 'Arial', sans-serif;
-      padding-top: 60px;
-      background-color: var(--light-body);
-      color: var(--light-text);
-      transition: background-color 0.3s, color 0.3s;
-  }
- 
+    --dark-body: #30321c;
+    --dark-nav: #12100e;
+    --dark-footer: #12100e;
+    --dark-button: #6b654b;
+    --dark-text: #e0e0e0;
+
+    /* New toggle variables */
+    --toggleHeight: 2em;
+    --toggleWidth: 3.75em;
+    --toggleBtnRadius: 1.25em;
+    --bgColor--night: #423966;
+    --toggleBtn-bgColor--night: var(--bgColor--night);
+    --mooncolor: #D9FBFF;
+    --bgColor--day: #9ee3fb;
+    --toggleBtn-bgColor--day: var(--bgColor--day);
+}
+
+html, body {
+    height: 100%;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    padding-top: 60px;
+    background-color: var(--light-body);
+    color: var(--light-text);
+    transition: background-color 0.3s, color 0.3s;
+}
+
 /* You can remove the light-mode class styles if you're using it as the default */
-  
-  .navbar {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 1000;
-      background-color: var(--light-nav);
-  }
-  
-  .navbar-brand {
-      font-weight: bold;
-      color: var(--dark-text);
-  }
-  
-  .nav-link.active {
-      font-weight: bold;
-      color: var(--light-text);
-  }
-  
-  #darkModeToggle {
-      cursor: pointer;
-  }
-  
-  .card {
-      background-color: var(--light-body);
-      transition: box-shadow 0.3s ease-in-out;
-  }
-  
-  .card:hover {
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  }
-  
-  .site-footer {
-      background-color: var(--light-footer);
-      padding: 20px 0;
-      text-align: center;
-      margin-top: 40px;
-  }
-  
-  .site-footer p {
-      margin-bottom: 10px;
-      color: var(--light-text);
-  }
-  
-  .footer-nav a {
-      color: var(--light-button);
-      text-decoration: none;
-      margin: 0 5px;
-  }
-  
-  .footer-nav a:hover {
-      text-decoration: underline;
-  }
-  
-  /* Dark Mode Styles */
-  body.dark-mode {
-      background-color: var(--dark-body);
-      color: var(--dark-text);
-  }
-  
-  .dark-mode .navbar {
-      background-color: var(--dark-nav);
-  }
-  
-  .dark-mode .card {
-      background-color: var(--dark-nav);
-      border-color: var(--dark-button);
-  }
-  
-  .dark-mode .navbar-brand,
-  .dark-mode .nav-link.active {
-      color: var(--dark-text);
-  }
-  
-  .dark-mode .site-footer {
-      background-color: var(--dark-footer);
-      color: var(--dark-text);
-  }
-  
-  .dark-mode .footer-nav a {
-      color: var(--dark-button);
-  }
-  
-  .dark-mode .footer-nav a:hover {
-      color: var(--dark-text);
-  }
-  
-  /* Responsive styles */
-  @media (max-width: 768px) {
-      body {
-          padding-top: 56px;
-      }
-  }
 
-  #darkModeToggle {
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: var(--light-nav);
+}
+
+.navbar-brand {
+    font-weight: bold;
+    color: var(--dark-text);
+}
+
+.nav-link.active {
+    font-weight: bold;
+    color: var(--light-text);
+}
+
+#darkModeToggle {
+    cursor: pointer;
+}
+
+.card {
+    background-color: var(--light-body);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.site-footer {
+    background-color: var(--light-footer);
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 40px;
+    flex-shrink: 0;
+    /* Prevent the footer from shrinking */
+}
+
+.site-footer p {
+    margin-bottom: 10px;
+    color: var(--light-text);
+}
+
+.footer-nav a {
+    color: var(--light-button);
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+.footer-nav a:hover {
+    text-decoration: underline;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: var(--dark-body);
+    color: var(--dark-text);
+}
+
+.dark-mode .navbar {
+    background-color: var(--dark-nav);
+}
+
+.dark-mode .card {
+    background-color: var(--dark-nav);
+    border-color: var(--dark-button);
+}
+
+.dark-mode .navbar-brand,
+.dark-mode .nav-link.active {
+    color: var(--dark-text);
+}
+
+.dark-mode .site-footer {
+    background-color: var(--dark-footer);
+    color: var(--dark-text);
+}
+
+.dark-mode .footer-nav a {
+    color: var(--dark-button);
+}
+
+.dark-mode .footer-nav a:hover {
+    color: var(--dark-text);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    body {
+        padding-top: 56px;
+    }
+}
+
+#darkModeToggle {
     background: none;
     border: none;
     cursor: pointer;
     padding: 0;
-  }
-  
-  .tdnn {
+}
+
+.tdnn {
     position: relative;
     height: var(--toggleHeight);
     width: var(--toggleWidth);
     border-radius: var(--toggleHeight);
     transition: all 500ms ease-in-out;
     background: var(--bgColor--night);
-  }
-  
-  body:not(.dark-mode) .tdnn {
+}
+
+body:not(.dark-mode) .tdnn {
     background: #FFBF71;
-  }
-  
-  .moon {
+}
+
+.moon {
     position: absolute;
     display: block;
     border-radius: 50%;
     transition: all 400ms ease-in-out;
-    
+
     top: 0.375em;
     left: 0.375em;
     transform: rotate(-75deg);
     width: var(--toggleBtnRadius);
     height: var(--toggleBtnRadius);
     background: var(--bgColor--night);
-    box-shadow: 
-      0.375em 0.3125em 0 0em var(--mooncolor) inset,
-      rgba(255, 255, 255, 0.1) 0em -0.875em 0 -0.5625em,
-      rgba(255, 255, 255, 0.1) 0.375em 0.875em 0 -0.5625em,
-      rgba(255, 255, 255, 0.1) 0.25em 1.625em 0 -0.5em,
-      rgba(255, 255, 255, 0.1) 0.75em 0.25em 0 -0.5125em,
-      rgba(255, 255, 255, 0.1) 1em 1em 0 -0.5625em,
-      rgba(255, 255, 255, 0.1) 0.75em 1.625em 0 -0.5625em,
-      rgba(255, 255, 255, 0.1) -0.5em 0.875em 0 -0.5625em,
-      rgba(255, 255, 255, 0.1) -0.125em 1.25em 0 -0.5625em;
-  }
-  
-  body:not(.dark-mode) .moon {
+    box-shadow:
+        0.375em 0.3125em 0 0em var(--mooncolor) inset,
+        rgba(255, 255, 255, 0.1) 0em -0.875em 0 -0.5625em,
+        rgba(255, 255, 255, 0.1) 0.375em 0.875em 0 -0.5625em,
+        rgba(255, 255, 255, 0.1) 0.25em 1.625em 0 -0.5em,
+        rgba(255, 255, 255, 0.1) 0.75em 0.25em 0 -0.5125em,
+        rgba(255, 255, 255, 0.1) 1em 1em 0 -0.5625em,
+        rgba(255, 255, 255, 0.1) 0.75em 1.625em 0 -0.5625em,
+        rgba(255, 255, 255, 0.1) -0.5em 0.875em 0 -0.5625em,
+        rgba(255, 255, 255, 0.1) -0.125em 1.25em 0 -0.5625em;
+}
+
+body:not(.dark-mode) .moon {
     top: 0.5625em;
     left: 2.25em;
     transform: rotate(0deg);
@@ -177,12 +192,12 @@
     height: 0.875em;
     background: #fff;
     box-shadow: 0.375em 0.375em 0 0.625em #fff inset,
-      0 -0.625em 0 -0.3375em #fff,
-      0.4375em -0.4375em 0 -0.375em #fff,
-      0.625em 0 0 -0.3375em #fff,
-      0.4375em 0.4375em 0 -0.375em #fff,
-      0 0.625em 0 -0.3375em #fff,
-      -0.4375em 0.4375em 0 -0.375em #fff,
-      -0.625em 0 0 -0.3375em #fff,
-      -0.4375em -0.4375em 0 -0.375em #fff;
-  }
+        0 -0.625em 0 -0.3375em #fff,
+        0.4375em -0.4375em 0 -0.375em #fff,
+        0.625em 0 0 -0.3375em #fff,
+        0.4375em 0.4375em 0 -0.375em #fff,
+        0 0.625em 0 -0.3375em #fff,
+        -0.4375em 0.4375em 0 -0.375em #fff,
+        -0.625em 0 0 -0.3375em #fff,
+        -0.4375em -0.4375em 0 -0.375em #fff;
+}

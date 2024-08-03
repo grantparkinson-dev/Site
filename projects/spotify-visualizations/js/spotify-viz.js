@@ -1,3 +1,24 @@
+function updateChartColors(layout) {
+  const isDarkMode = document.body.classList.contains('dark-mode');
+  layout.paper_bgcolor = isDarkMode ? 'rgba(18, 18, 18, 0.1)' : 'rgba(255, 255, 255, 0.1)';
+  layout.plot_bgcolor = isDarkMode ? 'rgba(18, 18, 18, 0.1)' : 'rgba(255, 255, 255, 0.1)';
+  layout.font = { color: isDarkMode ? '#ffffff' : '#333333' };
+  layout.xaxis.gridcolor = isDarkMode ? '#535353' : '#e0e0e0';
+  layout.yaxis.gridcolor = isDarkMode ? '#535353' : '#e0e0e0';
+}
+
+updateChartColors(layout);
+
+
+
+
+
+
+
+
+
+
+
 const timeRangeSelect = document.getElementById('timeRange');
 
 timeRangeSelect.addEventListener('change', (event) => {
@@ -94,7 +115,13 @@ function createTopResultsTable(data) {
     const artistNames = data.map(item => item.master_metadata_album_artist_name);
     const playTime = data.map(item => Math.round(item.total_ms_played / 60000)); // Convert to minutes and round to nearest integer
     const totalPlays = data.map(item => item.total_plays);
-  
+    const isDarkMode = document.body.classList.contains('dark-mode');
+    const headerColor = isDarkMode ? '#535353' : 'grey';
+    const cellColor = isDarkMode ? 
+      ['rgba(83, 83, 83, 0.65)', 'rgba(66, 66, 66, 0.65)'] : 
+      ['rgba(228, 222, 249, 0.65)', 'rgba(222, 235, 247, 0.65)'];
+    const fontColor = isDarkMode ? 'white' : 'black';
+    
     const trace = {
       type: 'table',
       header: {
@@ -122,9 +149,25 @@ function createTopResultsTable(data) {
   }
 
 // Initial load with default time range
-loadAndCreateCharts('all_time');
 
+function redrawCharts() {
+  const timeRange = document.getElementById('timeRange').value;
+  loadAndCreateCharts(timeRange);
+}
 // Redraw charts on window resize to adjust layout based on screen size
 window.onresize = () => {
   loadAndCreateCharts(timeRangeSelect.value);
 };
+const darkModeObserver = new MutationObserver((mutations) => {
+  mutations.forEach((mutation) => {
+    if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+      redrawCharts();
+    }
+  });
+});
+
+darkModeObserver.observe(document.body, {
+  attributes: true,
+  attributeFilter: ['class']
+});
+loadAndCreateCharts('all_time');

@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
             title: 'Spotify Visualizations',
             description: 'Interactive data visualizations of Spotify listening history.',
             image: 'img/project-thumbnails/spotify-viz.jpg',
-            url: 'projects/spotify-visualizations/index.html',
+            url: 'projects/spotify-visualizations/spotify_visual',
             tags: ['Data Visualization', 'JavaScript', 'Spotify API']
         },
         // Add more projects here

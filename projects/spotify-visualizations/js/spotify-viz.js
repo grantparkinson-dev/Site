@@ -1,13 +1,7 @@
-function updateChartColors(layout) {
-  const isDarkMode = document.body.classList.contains('dark-mode');
-  layout.paper_bgcolor = isDarkMode ? 'rgba(18, 18, 18, 0.1)' : 'rgba(255, 255, 255, 0.1)';
-  layout.plot_bgcolor = isDarkMode ? 'rgba(18, 18, 18, 0.1)' : 'rgba(255, 255, 255, 0.1)';
-  layout.font = { color: isDarkMode ? '#ffffff' : '#333333' };
-  layout.xaxis.gridcolor = isDarkMode ? '#535353' : '#e0e0e0';
-  layout.yaxis.gridcolor = isDarkMode ? '#535353' : '#e0e0e0';
-}
 
-updateChartColors(layout);
+
+
+
 
 
 
@@ -109,6 +103,18 @@ function createTopTracksChart(data, timeRange) {
 
   Plotly.newPlot('topTracksChart', [trace], layout);
 }
+
+
+function updateChartColors(layout) {
+  const isDarkMode = document.body.classList.contains('dark-mode');
+  layout.paper_bgcolor = isDarkMode ? 'rgba(18, 18, 18, 0.1)' : 'rgba(255, 255, 255, 0.1)';
+  layout.plot_bgcolor = isDarkMode ? 'rgba(18, 18, 18, 0.1)' : 'rgba(255, 255, 255, 0.1)';
+  layout.font = { color: isDarkMode ? '#ffffff' : '#333333' };
+  layout.xaxis.gridcolor = isDarkMode ? '#535353' : '#e0e0e0';
+  layout.yaxis.gridcolor = isDarkMode ? '#535353' : '#e0e0e0';
+}
+
+updateChartColors(layout);
 
 function createTopResultsTable(data) {
     const trackNames = data.map(item => item.master_metadata_track_name);

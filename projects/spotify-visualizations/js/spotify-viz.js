@@ -1,18 +1,4 @@
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 const timeRangeSelect = document.getElementById('timeRange');
 
 timeRangeSelect.addEventListener('change', (event) => {
